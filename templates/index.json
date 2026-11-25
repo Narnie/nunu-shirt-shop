@@ -7,9 +7,11 @@
         "heading": "NARNIE & NUNU",
         "heading_size": "h1",
         "subtext": "<p>Art by Narnie, starring Nunu. Organic blanks, printed on demand.</p>",
-        "button_label": "Shop the drop",
+        "button_label": "See the prints",
         "button_link": "shopify://collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 56
       }
     },
     "featured_collection": {
