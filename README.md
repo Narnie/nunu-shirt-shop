@@ -1,7 +1,7 @@
 # nunu-shirt-shop
 
-Storefront theme for the **Narnie** art shop — print-on-demand apparel featuring
-Nunu the whippet, fulfilled by [Gelato](https://gelato.com).
+Storefront theme for the **NARNIE & NUNU** art shop — print-on-demand apparel
+featuring Nunu the whippet, fulfilled by [Gelato](https://gelato.com).
 
 ## Architecture
 
