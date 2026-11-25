@@ -51,19 +51,19 @@
         },
         "scheme-5": {
           "settings": {
-            "background": "#334FB4",
+            "background": "#3B4A63",
             "background_gradient": "",
             "text": "#FFFFFF",
             "button": "#FFFFFF",
-            "button_label": "#334FB4",
+            "button_label": "#3B4A63",
             "secondary_button_label": "#FFFFFF",
             "shadow": "#121212"
           }
         }
       },
-      "type_header_font": "assistant_n4",
+      "type_header_font": "jost_n6",
       "heading_scale": 100,
-      "type_body_font": "assistant_n4",
+      "type_body_font": "jost_n4",
       "body_scale": 100,
       "page_width": 1200,
       "spacing_sections": 0,

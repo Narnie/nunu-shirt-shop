@@ -1,0 +1,186 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.6 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.6 | round: 0 }}px;
+  }
+
+  .nunu-hero-{{ section.id }} {
+    text-align: center;
+  }
+
+  .nunu-hero-{{ section.id }} .nunu-hero__image {
+    width: {{ section.settings.image_width }}px;
+    max-width: 60vw;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 2.5rem;
+  }
+
+  .nunu-hero-{{ section.id }} .nunu-hero__heading {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .nunu-hero-{{ section.id }} .nunu-hero__subtext {
+    max-width: 46rem;
+    margin: 0 auto 3rem;
+  }
+
+  .nunu-hero-{{ section.id }} .nunu-hero__subtext p {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="nunu-hero-{{ section.id }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {%- if section.settings.image -%}
+        {{
+          section.settings.image
+          | image_url: width: 800
+          | image_tag:
+            class: 'nunu-hero__image',
+            widths: '160, 240, 320, 480, 640, 800',
+            alt: shop.name
+        }}
+      {%- else -%}
+        <img
+          class="nunu-hero__image"
+          src="{{ 'nunu-logo.png' | asset_url }}"
+          width="{{ section.settings.image_width }}"
+          height="{{ section.settings.image_width | times: 533 | divided_by: 300 | round }}"
+          alt="{{ shop.name | escape }}"
+          loading="eager"
+        >
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="nunu-hero__heading inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h1>
+      {%- endif -%}
+
+      {%- if section.settings.subtext != blank -%}
+        <div class="nunu-hero__subtext rte">
+          {{ section.settings.subtext }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          {% if section.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+          class="button"
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Nunu hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image",
+      "info": "Falls back to the nunu stencil asset while the brand is TBD."
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 80,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Image width",
+      "default": 200
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "NARNIE"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" },
+        { "value": "hxl", "label": "Extra large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Art on organic blanks. Printed on demand, shipped local.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop the drop"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 72
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nunu hero"
+    }
+  ]
+}
+{% endschema %}
