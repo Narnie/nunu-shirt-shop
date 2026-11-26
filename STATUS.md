@@ -26,7 +26,8 @@ Last updated: 2026-11-25
 
 - [ ] **Gelato app** — install in Shopify, create first product
       (organic blank: Stanley/Stella or Econscious; see README tier list)
-- [ ] **Payments** — activate Shopify Payments; toggle PayPal
+- [ ] **Payments** — activate Shopify Payments; enable PayPal (business
+      account exists — update its email once store email is set up)
 - [ ] **Shipping** — review rates vs Gelato's per-product shipping costs
 - [ ] **Plan** — pick Shopify plan to drop the storefront password
 - [ ] **Custom domain** — `narnienunu.art` / `narnienunu.com` appeared
@@ -66,19 +67,14 @@ Also sanity-check the print size on the mockup vs reality.
 
 ### PayPal / business details privacy
 
+- **PayPal business account exists** — buyers see the business name, not a
+  personal one. TODO: switch its email to the store email once set up.
 - **Shopify Payments** legal name/address is KYC-only — never customer-facing.
-- **PayPal**: buyers see your *business name* and business email at checkout.
-  Your address/phone aren't shown on standard card transactions, but CAN
-  appear on invoices/payment-request receipts. If your PayPal account is
-  still an individual type, your **personal name may show** — set/upgrade the
-  business name to `NARNIE & NUNU`.
-- Biggest exposure point is usually the **return/shipping address** — POD
-  dodges this entirely: Gelato ships from their facility, your home address
-  never reaches customers.
-- If still uncomfortable later: a registered agent/virtual mailbox address is
-  the standard fix, but likely unnecessary at this scale.
-- Also worth verifying domain WHOIS privacy when registering the domain
-  (usually on by default).
+- Physical address/phone aren't shown on standard PayPal checkout receipts;
+  they can appear on PayPal's *invoicing* feature — not used here.
+- Biggest usual exposure (return/shipping address) doesn't apply: Gelato
+  ships from their facility, home address never reaches customers.
+- Verify domain WHOIS privacy when registering (usually on by default).
 
 ### Instagram business + agent access
 
