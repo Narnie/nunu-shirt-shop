@@ -29,7 +29,8 @@ Last updated: 2026-11-25
 - [ ] **Payments** — activate Shopify Payments; enable PayPal (business
       account exists — update its email once store email is set up)
 - [ ] **Shipping** — review rates vs Gelato's per-product shipping costs
-- [ ] **Plan** — pick Shopify plan to drop the storefront password
+- [x] **Plan** — Shopify plan active
+- [ ] **Launch** — remove password page (Online Store → Preferences) when ready
 - [ ] **Custom domain** — `narnienunu.art` / `narnienunu.com` appeared
       unregistered (verify at checkout); connect in admin after buying
 - [ ] **Store email** — see notes below
@@ -75,6 +76,17 @@ Also sanity-check the print size on the mockup vs reality.
 - Biggest usual exposure (return/shipping address) doesn't apply: Gelato
   ships from their facility, home address never reaches customers.
 - Verify domain WHOIS privacy when registering (usually on by default).
+
+### Pre-launch testing (friends & family)
+
+1. Share `narnienunu.myshopify.com` + storefront password — full browsing,
+   checkout optional. Works today.
+2. **Test-mode orders**: Settings → Payments → enable test mode on Shopify
+   Payments → bogus card `1` succeeds. Verify order email + admin flow.
+   **Turn off before launch.**
+3. **Gelato end-to-end**: set orders to manual approval in Gelato (or place a
+   real sample order — doubles as the test print) before letting real orders
+   flow automatically.
 
 ### Instagram business + agent access
 
